@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>50</y>
+      <w>170</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Reiziger
+--
+_-reizigersCode_
+-voornaam
+-achternaam
+-adres
+-postcode
+-plaats
+-land
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>590</y>
+      <w>180</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Hotel
+--
+_-accommodatieCode_
+-naam
+-stad
+-land
+-kamer
+-prijsPerNacht
+-personen
+-ontbijt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>580</y>
+      <w>180</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Lodge
+--
+_-accommodatieCode_
+-naam
+-stad
+-land
+-kamer
+-prijsPerWeek
+-personen
+-autohuur</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>330</y>
+      <w>180</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Reservering
+--
+_-idReservering_
+-accommodatie
+-reizigersCode
+-aankomstDatum
+-vertrekDatum
+-betaald</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>230</y>
+      <w>60</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+m1=1..m
+m2=0..m</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>510</y>
+      <w>260</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+m1=0..m
+m2=0..1</panel_attributes>
+    <additional_attributes>10.0;10.0;240.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>510</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+m1=0..m
+m2=0..1</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+</diagram>
