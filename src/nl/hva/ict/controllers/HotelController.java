@@ -7,7 +7,6 @@ import nl.hva.ict.models.Hotel;
 import nl.hva.ict.views.HotelView;
 import nl.hva.ict.views.View;
 
-
 /**
  * Controller voor de hotel view
  * @author HBO-ICT
@@ -26,27 +25,30 @@ public class HotelController extends Controller {
 
         // luister naar wijzigingen in de listview en ga naar de functie getItemsInFields() als er een item wordt geselecteerd
         hotelView.getHotelsViewListView().getSelectionModel().selectedItemProperty()
-                .addListener(e -> getItemsInFields());
+                .addListener( (observableValue, oldhotel, newhotel) -> {
+                    getItemsInFields(newhotel);
+                    refreshListView();
+                });
 
         // Set wat acties als op de buttons wordt geklikt
         hotelView.getBtSave().setOnAction(e -> save());
-        hotelView.getBtUpdateData().setOnAction(e -> refreshData());
-        hotelView.getBtNew().setOnAction(e -> insert());
+        hotelView.getBtUpdateData().setOnAction(e -> refreshListView());
+        hotelView.getBtNew().setOnAction(e -> clearFields());
         hotelView.getBtDelete().setOnAction(e -> delete());
 
-        // Maak verbinding met de DAO, haal arrayList op met alle boekingen en stop dit in een observable list
-        ObservableList<Hotel> hotels = FXCollections.observableArrayList(MainApplication.getMySQLHotel().getAll());
+        refreshListView();
 
-        //update de listview
-        hotelView.getHotelsViewListView().setItems(hotels);
     }
 
     /**
      * reload de data uit de DAO
      */
-    private void refreshData() {
-        MainApplication.getMySQLHotel().reload();
-    }
+    private void refreshListView() {
+        // Maak verbinding met de DAO, haal arrayList op met alle boekingen en stop dit in een observable list
+        ObservableList<Hotel> hotels = FXCollections.observableArrayList(MainApplication.getMySQLHotel().getAll());
+        //update de listview
+        hotelView.getHotelsViewListView().setItems(hotels);
+   }
 
     /**
      * Save de data als op de knop wordt gedrukt
@@ -74,12 +76,18 @@ public class HotelController extends Controller {
         Hotel currentHotel = hotelView.getHotelsViewListView().getSelectionModel().getSelectedItem();
         // Roep de DAO aan om het te verwijderen
         MainApplication.getMySQLHotel().remove(currentHotel);
+
+        //maak velden leeg
+        clearFields();
+
+        //werk de listview bij
+        refreshListView();
     }
 
     /**
      * Maak alle velden leeg.
      */
-    private void insert(){
+    private void clearFields(){
         // maak alle velden leeg
         hotelView.getTxtAccommodatieCode().setText("");
         hotelView.getTxtNaam().setText("");
@@ -88,15 +96,17 @@ public class HotelController extends Controller {
         hotelView.getTxtKamertype().setText("");
         hotelView.getTxtAantalPersonen().setText("");
         hotelView.getTxtPrijsPerNacht().setText("");
-        hotelView.getCheckOntbijt().setText("");
+        hotelView.getCheckOntbijt().setSelected(false);
     }
 
     /**
      * Set alle velden als er een object in de Listview is aangeklikt
      */
-    private void getItemsInFields() {
-        // Welk object is er geselecteerd?
-        Hotel currentHotel = hotelView.getHotelsViewListView().getSelectionModel().getSelectedItem();
+    private void getItemsInFields(Hotel currentHotel) {
+
+        if (currentHotel == null) {
+            return;
+        }
 
         // Update de velden
         hotelView.getTxtAccommodatieCode().setText((currentHotel.getAccommodatieCode()));
