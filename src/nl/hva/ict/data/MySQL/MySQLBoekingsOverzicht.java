@@ -39,7 +39,7 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
     private void load() {
 
         // Vul hier je SQL code in
-        String sql = "SELECT *, CONCAT(voornaam,' ', achternaam) AS 'reiziger' FROM Reservering INNER JOIN Reiziger ON Reiziger.reiziger_code = Reservering.reizigers_code INNER JOIN Accommodatie ON Accommodatie.accommodatie_code = Reservering.accommodatie_code";
+        String sql = "SELECT *, CONCAT(voornaam,' ', achternaam) AS 'reiziger' FROM Reservering INNER JOIN Reiziger ON Reiziger.reizigers_code = Reservering.reizigers_code INNER JOIN Accommodatie ON Accommodatie.accommodatie_code = Reservering.accommodatie_code";
 
         // Als je nog geen query hebt ingevuld breek dan af om een error te voorkomen.
         if (sql.equals(""))
@@ -100,7 +100,7 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
         List<BoekingsOverzicht> reserveringVoor = new ArrayList<>();
 
         // Voer hier je query in
-        String sql = "";
+        String sql = "SELECT res.*, acc.naam, acc.stad, acc.land, reiz.voornaam, reiz.achternaam, reiz.plaats FROM Reservering res JOIN Accommodatie acc ON acc.accommodatie_code = res.accommodatie_code JOIN Reiziger reiz ON reiz.reizigers_code = res.reizigers_code";
 
 
         try {
