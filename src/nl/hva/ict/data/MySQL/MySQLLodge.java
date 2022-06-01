@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Dao voor lodges
@@ -33,7 +34,7 @@ public class MySQLLodge extends MySQL<Lodge> {
     private void load() {
 
         // Voer hier je SQL code in
-        String sql = "";
+        String sql = "SELECT * FROM Lodge INNER JOIN Accommodatie ON Lodge.accommodatie_code = Accommodatie.accommodatie_code";
 
         // Als je nog geen query hebt ingevuld breek dan af om een error te voorkomen.
         if (sql.equals(""))
@@ -48,14 +49,15 @@ public class MySQLLodge extends MySQL<Lodge> {
 
             // Loop net zolang als er records zijn
             while (rs.next()) {
-                String accommodatieCode = rs.getString("accommodatieCode");
+                String accommodatieCode = rs.getString("accommodatie_code");
+                double prijsPerWeek = rs.getDouble("prijs_per_week");
+                boolean autohuur = Objects.equals(rs.getString("autohuur"), "Ja");
+                // inner join data
                 String naam = rs.getString("naam");
                 String stad = rs.getString("stad");
                 String land = rs.getString("land");
                 String kamer = rs.getString("kamer");
                 int personen = rs.getInt("personen");
-                double prijsPerWeek = rs.getDouble("prijsPerWeek");
-                boolean autohuur = rs.getBoolean("autohuur");
 
                 // Maak model aan en voeg toe aan arraylist
                 lodges.add(new Lodge(accommodatieCode, naam, stad, land, kamer, personen,prijsPerWeek, autohuur));

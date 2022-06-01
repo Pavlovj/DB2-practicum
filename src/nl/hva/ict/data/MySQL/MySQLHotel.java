@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Dao voor hotels
@@ -34,7 +35,7 @@ public class MySQLHotel extends MySQL<Hotel> {
     private void load() {
 
         // Voer hier je SQL code in
-        String sql = "";
+        String sql = "SELECT * FROM Hotel INNER JOIN Accommodatie ON Hotel.accommodatie_code = Accommodatie.accommodatie_code";
 
         // Als je nog geen query hebt ingevuld breek dan af om een error te voorkomen.
         if (sql.equals(""))
@@ -50,14 +51,16 @@ public class MySQLHotel extends MySQL<Hotel> {
 
             // Loop net zolang als er records zijn
             while (rs.next()) {
-                String accommodatieCode = rs.getString("accommodatieCode");
+                String accommodatieCode = rs.getString("accommodatie_code");
+                double prijsPerNacht = rs.getDouble("prijs_per_nacht");
+                boolean ontbijt = Objects.equals(rs.getString("ontbijt"), String.valueOf('Y'));
+                System.out.println(ontbijt);
+                // inner join data
                 String naam = rs.getString("naam");
                 String stad = rs.getString("stad");
                 String land = rs.getString("land");
                 String kamer = rs.getString("kamer");
                 int personen = rs.getInt("personen");
-                double prijsPerNacht = rs.getDouble("prijsPerNacht");
-                boolean ontbijt = rs.getBoolean("ontbijt");
                 // Maak model aan en voeg toe aan arraylist
                 hotels.add(new Hotel(accommodatieCode, naam, stad, land, kamer, personen, prijsPerNacht, ontbijt));
             }

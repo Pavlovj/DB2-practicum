@@ -39,7 +39,7 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
     private void load() {
 
         // Vul hier je SQL code in
-        String sql = "";
+        String sql = "SELECT *, CONCAT(voornaam,' ', achternaam) AS 'reiziger' FROM Reservering INNER JOIN Reiziger ON Reiziger.reiziger_code = Reservering.reizigers_code INNER JOIN Accommodatie ON Accommodatie.accommodatie_code = Reservering.accommodatie_code";
 
         // Als je nog geen query hebt ingevuld breek dan af om een error te voorkomen.
         if (sql.equals(""))
@@ -54,12 +54,14 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
 
             // Loop net zolang als er records zijn
             while (rs.next()) {
-                int idReservering = 0;
-                Date aankomstDatum = rs.getDate("aankomstDatum");
-                Date vertrekDatum = rs.getDate("vertrekDatum");
-                boolean betaald = rs.getBoolean("betaald");
-                String accommodatieCode = rs.getString("accommodatieCode");
-                String reizerCode = rs.getString("reizigerCode");
+                int idReservering = rs.getInt("id_reservering");
+                String accommodatieCode = rs.getString("accommodatie_code");
+                String reizerCode = rs.getString("reizigers_code");
+                Date aankomstDatum = rs.getDate("aankomst_datum");
+                Date vertrekDatum = rs.getDate("vertrek_datum");
+                boolean betaald = rs.getString("betaald") == String.valueOf('Y');
+
+
                 String voornaam = ""; // not in use
                 String achternaam = rs.getString("reiziger"); // combine voor en achternaam
                 String adres = ""; // not in use

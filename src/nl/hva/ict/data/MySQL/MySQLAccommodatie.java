@@ -33,7 +33,7 @@ public class MySQLAccommodatie extends MySQL<Accommodatie> {
     private void load() {
 
         // Vul hier je SQL code in
-        String sql = "";
+        String sql = "SELECT * FROM Accommodatie";
 
         // Als je nog geen query hebt ingevuld breek dan af om een error te voorkomen.
         if (sql.equals(""))
@@ -50,7 +50,7 @@ public class MySQLAccommodatie extends MySQL<Accommodatie> {
             while (rs.next()) {
 
                 // Haal alle velden op. Heb je een database ontwerp met andere velden? Pas dan hier de veldnamen aan
-                String accommodatieCode = rs.getString("accommodatieCode");
+                String accommodatieCode = rs.getString("accommodatie_code");
                 String naam = rs.getString("naam");
                 String stad = rs.getString("stad");
                 String land = rs.getString("land");
