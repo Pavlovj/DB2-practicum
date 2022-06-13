@@ -100,15 +100,15 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
         List<BoekingsOverzicht> reserveringVoor = new ArrayList<>();
 
         // Voer hier je query in
-        String sql = "SELECT res.*, acc.naam, acc.stad, acc.land, reiz.voornaam, reiz.achternaam, reiz.plaats FROM Reservering res JOIN Accommodatie acc ON acc.accommodatie_code = res.accommodatie_code JOIN Reiziger reiz ON reiz.reizigers_code = res.reizigers_code";
+        String sql = "SELECT res.*, acc.naam, acc.stad, acc.land, reiz.voornaam, reiz.achternaam, reiz.plaats FROM Reservering res JOIN Accommodatie acc ON acc.accommodatie_code = res.accommodatie_code JOIN Reiziger reiz ON reiz.reizigers_code = res.reizigers_code WHERE res.reizigers_code = ?";
 
 
         try {
             // Maak je statement
             PreparedStatement ps = getStatement(sql);
-
             // Vervang het eerste vraagteken met de reizigerscode. Pas dit eventueel aan voor jou eigen query
             ps.setString(1, reizigerscode);
+
 
             // Voer het uit
             ResultSet rs = executeSelectPreparedStatement(ps);
@@ -117,10 +117,10 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
             // Loop net zolang als er records zijn
             while (rs.next()) {
                 int idReservering = 0;
-                Date aankomstDatum = rs.getDate("aankomstDatum");
-                Date vertrekDatum = rs.getDate("vertrekDatum");
-                boolean betaald = rs.getBoolean("betaald");
-                String accommodatieCode = rs.getString("accommodatieCode");
+                Date aankomstDatum = rs.getDate("aankomst_datum");
+                Date vertrekDatum = rs.getDate("vertrek_datum");
+                boolean betaald = rs.getString("betaald") == String.valueOf('Y');
+                String accommodatieCode = rs.getString("accommodatie_code");
 
                 String reizigerVoornaam = rs.getString("voornaam");
                 String reizigerAchternaam = rs.getString("achternaam");
@@ -163,7 +163,7 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
     private String getReizigerscode(String pCode, LocalDate pDatum) {
 
        // Voer hier je eigen query in
-        String sql = "";
+        String sql = "SELECT BigFiveSafari.GeboektOp(?,?) as reizigers_code;";
 
         // default waarde
         String reizigerCode = "";
@@ -184,7 +184,8 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
 
             // Loop net zolang als er records zijn
             while (rs.next()) {
-                reizigerCode = rs.getString("reizigerCode");
+                System.out.println(rs.getString("reizigers_code"));
+                reizigerCode = rs.getString("reizigers_code");
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -216,7 +217,7 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
         if (reizigerscode != null) {
 
             // Haal alle reserveringen op
-            String sql = "";
+            String sql = "SELECT * FROM `Reservering` INNER JOIN Reiziger ON Reiziger.reizigers_code = Reservering.reizigers_code WHERE Reservering.reizigers_code = ?";
 
             // Als je nog geen query hebt ingevuld breek dan af om een error te voorkomen.
             if (sql.equals(""))
@@ -240,7 +241,7 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
                     String postcode = rs.getString("postcode");
                     String plaats = rs.getString("plaats");
                     String land = rs.getString("land");
-                    String hoofdreiziger = rs.getString("hoofdreiziger");
+                    String hoofdreiziger = rs.getString("gezinshoofd");
 
                     // Maak reserveringsobject en voeg direct toe aan arraylist
                     geboektOp.add(new Reiziger(reizigerscode, voornaam, achternaam, adres, postcode, plaats, land, hoofdreiziger));
