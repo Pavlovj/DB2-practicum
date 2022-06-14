@@ -39,7 +39,8 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
     private void load() {
 
         // Vul hier je SQL code in
-        String sql = "SELECT *, CONCAT(voornaam,' ', achternaam) AS 'reiziger' FROM Reservering INNER JOIN Reiziger ON Reiziger.reizigers_code = Reservering.reizigers_code INNER JOIN Accommodatie ON Accommodatie.accommodatie_code = Reservering.accommodatie_code";
+        // TODO CHECK OF DIT ZO MAG.
+        String sql = "SELECT Boekingsoverzicht.*, Accommodatie.accommodatie_code FROM `Boekingsoverzicht` INNER JOIN Accommodatie ON Accommodatie.naam = Boekingsoverzicht.naam";
 
         // Als je nog geen query hebt ingevuld breek dan af om een error te voorkomen.
         if (sql.equals(""))
@@ -63,7 +64,7 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
 
 
                 String voornaam = ""; // not in use
-                String achternaam = rs.getString("reiziger"); // combine voor en achternaam
+                String achternaam = rs.getString("reizigerNaam"); // combine voor en achternaam
                 String adres = ""; // not in use
                 String postcode = "";
                 String plaats = "";
