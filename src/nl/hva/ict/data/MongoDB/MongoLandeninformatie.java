@@ -158,7 +158,23 @@ public class MongoLandeninformatie extends MongoDB {
      * @param werelddeel Welke valuta wil je weten
      */
     public void welkeLandenZijnErIn(String werelddeel) {
+        // reset arraylist
+        this.landen.clear();
+
+        // selecteer collection
+        this.selectedCollection("landen");
+
+        Bson match = match(or(eq("region", werelddeel),eq("subregion", werelddeel)));
+
+        List<Document> results = collection.aggregate(Arrays.asList(match))
+                .into(new ArrayList<>());
+
+        for (Document land : results) {
+            this.landen.add(new Landen(land.get("name").toString(), land.get("capital").toString()));
+        }
+
     }
+
 
     /**
      * Hoeveel inwoners heeft Oost-Afrika?. Haal deze informatie uit de database en gebruik hiervoor aggregation.
