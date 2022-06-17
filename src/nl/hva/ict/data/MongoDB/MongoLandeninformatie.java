@@ -117,6 +117,38 @@ public class MongoLandeninformatie extends MongoDB {
      * @param alleenAfrika filter het resultaat zodat wel of niet alleen afrikaanse landen terug komen
      */
     public void waarBetaalJeMet(String valuta, boolean alleenAfrika) {
+
+        // Als je geen NoSQL server hebt opgegeven gaat de methode niet verder anders zou je een nullpointer krijgen
+        if (MainApplication.getNosqlHost().equals(""))
+            return;
+
+        // reset arraylist
+        this.landen.clear();
+
+        // selecteer collection
+        this.selectedCollection("landen");
+
+
+        Bson match;
+
+        // Aggregation functie in Mongo
+
+        if (alleenAfrika){
+            match = match(and(eq("region", "Africa"),eq("currencies.name", valuta)));
+        } else {
+            match = match(eq("currencies.name", valuta));
+        }
+
+
+
+        List<Document> results = collection.aggregate(Arrays.asList(match))
+                .into(new ArrayList<>());
+
+        // Maak models en voeg resultaat toe aan arraylist
+        for (Document land : results) {
+            this.landen.add(new Landen(land.get("name").toString(), land.get("capital").toString()));
+
+        }
     }
 
     /**
