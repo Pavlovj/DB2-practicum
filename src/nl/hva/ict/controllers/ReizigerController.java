@@ -39,6 +39,7 @@ public class ReizigerController extends Controller {
 
 
         reizigersView.getReizigersViewListView().setItems(reizigers);
+        reizigersView.getComboReistSamenMet().setItems(reizigers);
         reizigersView.getComboReistSamenMet().getSelectionModel().select(null);
 
     }
@@ -98,6 +99,18 @@ public class ReizigerController extends Controller {
         reizigersView.getTxtPostcode().setText(currentReiziger.getPostcode());
         reizigersView.getTxtPlaats().setText(currentReiziger.getPlaats());
         reizigersView.getTxtLand().setText(currentReiziger.getLand());
+
+
+        ObservableList<Reiziger> reizigers = FXCollections.observableArrayList(MainApplication.getMongoDBReizigers().getAll());
+
+        for (Reiziger reiziger : reizigers) {
+            if (reiziger.getReizigersCode().equals(currentReiziger.getHoofdreiziger())) {
+                reizigersView.getComboReistSamenMet().getSelectionModel().select(reiziger);
+                break;
+            } else {
+                reizigersView.getComboReistSamenMet().getSelectionModel().clearSelection();
+            }
+        }
     }
 
 
@@ -105,7 +118,6 @@ public class ReizigerController extends Controller {
      * Nog niets mee gedaan
      */
     private void getItemsComboBox() {
-
     }
 
     /**
