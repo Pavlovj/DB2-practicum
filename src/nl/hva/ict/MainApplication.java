@@ -20,14 +20,14 @@ public class MainApplication extends Application {
     private static final String TITLE = "Practicumopdracht DB2 - Startproject - versie 2022 ";
 
     //MySQL
-    private static final String MYSQL_HOST = "jdbc:mysql://localhost:3306/big_five_safari?autoReconnect=true&serverTimezone=Europe/Amsterdam&useSSL=False";
+    private static final String MYSQL_HOST = "jdbc:mysql://localhost:3306/bigfivesafari?autoReconnect=true&serverTimezone=Europe/Amsterdam&useSSL=False";
     private static final String MYSQL_USERNAME = "root";  // vul hier je DB username in
-    private static final String MYSQL_PASSWORD = "5Q#C^Dab$z&q"; // vul hier je DB wachtwoord in
+    private static final String MYSQL_PASSWORD = "root"; // vul hier je DB wachtwoord in
 
     //Mongo NoSQL
-    private static final String NOSQL_HOST = ""; // Vul hier je MongoDB gegevens in. Iets met mongodb+srv://......
-    private static final String NOSQL_DATABASE = ""; // Vul hier je database gegevens in;
-    
+    private static final String NOSQL_HOST = "mongodb+srv://root:root@cluster0.n4x9h.mongodb.net/?retryWrites=true&w=majority"; // Vul hier je MongoDB gegevens in. Iets met mongodb+srv://......
+    private static final String NOSQL_DATABASE = "big_five_safari"; // Vul hier je database gegevens in;
+
     //Data models
     private static final MySQLReizigers mySQLReizigers = new MySQLReizigers();
     private static final MySQLLodge mySQLLodge = new MySQLLodge();
@@ -35,6 +35,7 @@ public class MainApplication extends Application {
     private static final MySQLAccommodatie mySQLAccommodatie = new MySQLAccommodatie();
     private static final MySQLBoekingsOverzicht mySQLBoekingsOverzicht = new MySQLBoekingsOverzicht();
     private static final MongoReizigers mongoDBReizigers = new MongoReizigers();
+
     private static final MongoLandeninformatie mongoLandenInformatie = new MongoLandeninformatie();
     //JavaFX
     private static Stage stage;
@@ -89,6 +90,7 @@ public class MainApplication extends Application {
     }
 
     public static MongoReizigers getMongoDBReizigers() {
+
         return mongoDBReizigers;
     }
 
