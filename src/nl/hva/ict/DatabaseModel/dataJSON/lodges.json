@@ -1,0 +1,37 @@
+[
+	{
+		"accommodatie_code" : "LAAC1",
+		"prijs_per_week" : 447,
+		"autohuur" : "N"
+	},
+	{
+		"accommodatie_code" : "LASL1",
+		"prijs_per_week" : 946,
+		"autohuur" : "Y"
+	},
+	{
+		"accommodatie_code" : "LBBL1",
+		"prijs_per_week" : 939,
+		"autohuur" : "Y"
+	},
+	{
+		"accommodatie_code" : "LIEK1",
+		"prijs_per_week" : 1182,
+		"autohuur" : "N"
+	},
+	{
+		"accommodatie_code" : "LIML1",
+		"prijs_per_week" : 788,
+		"autohuur" : "Y"
+	},
+	{
+		"accommodatie_code" : "LML1",
+		"prijs_per_week" : 1091,
+		"autohuur" : "Y"
+	},
+	{
+		"accommodatie_code" : "LNZL1",
+		"prijs_per_week" : 899,
+		"autohuur" : "Y"
+	}
+]

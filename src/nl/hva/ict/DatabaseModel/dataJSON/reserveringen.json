@@ -1,0 +1,98 @@
+[
+	{
+		"id_reservering" : 1,
+		"accommodatie_code" : "HIBZ2",
+		"reizigers_code" : "FadilT",
+		"aankomst_datum" : "2022-07-12",
+		"vertrek_datum" : "2022-07-19",
+		"betaald" : "Nee"
+	},
+	{
+		"id_reservering" : 2,
+		"accommodatie_code" : "HSCW1",
+		"reizigers_code" : "JeremyD",
+		"aankomst_datum" : "2022-07-10",
+		"vertrek_datum" : "2022-07-19",
+		"betaald" : "Ja"
+	},
+	{
+		"id_reservering" : 3,
+		"accommodatie_code" : "HPHC1",
+		"reizigers_code" : "WongH",
+		"aankomst_datum" : "2022-07-31",
+		"vertrek_datum" : "2022-08-05",
+		"betaald" : "Nee"
+	},
+	{
+		"id_reservering" : 4,
+		"accommodatie_code" : "LBBL1",
+		"reizigers_code" : "FadilT",
+		"aankomst_datum" : "2022-07-19",
+		"vertrek_datum" : "2022-07-26",
+		"betaald" : "Nee"
+	},
+	{
+		"id_reservering" : 5,
+		"accommodatie_code" : "LNZL1",
+		"reizigers_code" : "MulderF",
+		"aankomst_datum" : "2022-08-12",
+		"vertrek_datum" : "2022-08-19",
+		"betaald" : "Ja"
+	},
+	{
+		"id_reservering" : 6,
+		"accommodatie_code" : "HRHB1",
+		"reizigers_code" : "NazariM",
+		"aankomst_datum" : "2022-07-01",
+		"vertrek_datum" : "2022-07-05",
+		"betaald" : "Nee"
+	},
+	{
+		"id_reservering" : 7,
+		"accommodatie_code" : "LNZL1",
+		"reizigers_code" : "NazariM",
+		"aankomst_datum" : "2022-07-05",
+		"vertrek_datum" : "2022-07-12",
+		"betaald" : "Nee"
+	},
+	{
+		"id_reservering" : 8,
+		"accommodatie_code" : "HRMS1",
+		"reizigers_code" : "NguyenR",
+		"aankomst_datum" : "2022-07-24",
+		"vertrek_datum" : "2022-07-26",
+		"betaald" : "Ja"
+	},
+	{
+		"id_reservering" : 9,
+		"accommodatie_code" : "HPHC1",
+		"reizigers_code" : "NguyenR",
+		"aankomst_datum" : "2022-07-26",
+		"vertrek_datum" : "2022-07-31",
+		"betaald" : "Ja"
+	},
+	{
+		"id_reservering" : 10,
+		"accommodatie_code" : "LIEK1",
+		"reizigers_code" : "NguyenR",
+		"aankomst_datum" : "2022-08-01",
+		"vertrek_datum" : "2022-08-08",
+		"betaald" : "Ja"
+	},
+	{
+		"id_reservering" : 11,
+		"accommodatie_code" : "LAAC1",
+		"reizigers_code" : "MeijerP",
+		"aankomst_datum" : "2022-08-19",
+		"vertrek_datum" : "2022-08-26",
+		"betaald" : "Nee"
+	},
+	{
+		"id_reservering" : 12,
+		"accommodatie_code" : "LIML1",
+		"reizigers_code" : "MeijerP",
+		"aankomst_datum" : "2022-08-26",
+		"vertrek_datum" : "2022-09-02",
+		"betaald" : "Nee"
+	}
+]

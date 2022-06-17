@@ -1,0 +1,52 @@
+[
+	{
+		"accommodatie_code" : "HEVO1",
+		"prijs_per_nacht" : 191,
+		"ontbijt" : "Y"
+	},
+	{
+		"accommodatie_code" : "HHIH1",
+		"prijs_per_nacht" : 64,
+		"ontbijt" : "N"
+	},
+	{
+		"accommodatie_code" : "HIBZ1",
+		"prijs_per_nacht" : 75,
+		"ontbijt" : "Y"
+	},
+	{
+		"accommodatie_code" : "HIBZ2",
+		"prijs_per_nacht" : 243,
+		"ontbijt" : "N"
+	},
+	{
+		"accommodatie_code" : "HPHC1",
+		"prijs_per_nacht" : 127,
+		"ontbijt" : "N"
+	},
+	{
+		"accommodatie_code" : "HRHB1",
+		"prijs_per_nacht" : 90,
+		"ontbijt" : "Y"
+	},
+	{
+		"accommodatie_code" : "HRMS1",
+		"prijs_per_nacht" : 99,
+		"ontbijt" : "Y"
+	},
+	{
+		"accommodatie_code" : "HRMS2",
+		"prijs_per_nacht" : 166,
+		"ontbijt" : "Y"
+	},
+	{
+		"accommodatie_code" : "HSCW1",
+		"prijs_per_nacht" : 105,
+		"ontbijt" : "N"
+	},
+	{
+		"accommodatie_code" : "HZBK1",
+		"prijs_per_nacht" : 369,
+		"ontbijt" : "Y"
+	}
+]

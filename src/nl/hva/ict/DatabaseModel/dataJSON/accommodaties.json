@@ -1,0 +1,138 @@
+[
+	{
+		"accommodatie_code" : "HEVO1",
+		"naam" : "Etosha Village",
+		"stad" : "Okaukuejo",
+		"land" : "Namibië",
+		"kamer" : "Standaard kamer met 2 Bedden",
+		"personen" : 2
+	},
+	{
+		"accommodatie_code" : "HHIH1",
+		"naam" : "Holiday Inn",
+		"stad" : "Harare",
+		"land" : "Zimbabwe",
+		"kamer" : "Standaard kamer",
+		"personen" : 3
+	},
+	{
+		"accommodatie_code" : "HIBZ1",
+		"naam" : "Indigo Beach",
+		"stad" : "Zanzibar",
+		"land" : "Tanzania",
+		"kamer" : "Swahili-stijl budget tweepersoonskamer",
+		"personen" : 2
+	},
+	{
+		"accommodatie_code" : "HIBZ2",
+		"naam" : "Indigo Beach",
+		"stad" : "Zanzibar",
+		"land" : "Tanzania",
+		"kamer" : "Bungalow met uitzicht op de tuin ",
+		"personen" : 8
+	},
+	{
+		"accommodatie_code" : "HPHC1",
+		"naam" : "Premier Hotel Cape Town",
+		"stad" : "Kaapstad",
+		"land" : "Zuid-Afrika",
+		"kamer" : "Familie loft met queensize bed en 2 aparte bedden",
+		"personen" : 4
+	},
+	{
+		"accommodatie_code" : "HRHB1",
+		"naam" : "Bulawayo Rainbow Hotel",
+		"stad" : "Bulawayo",
+		"land" : "Zimbabwe",
+		"kamer" : "Deluxe tweepersoonskamer",
+		"personen" : 2
+	},
+	{
+		"accommodatie_code" : "HRMS1",
+		"naam" : "River Manor Boutique Hote",
+		"stad" : "Stellen Bosch",
+		"land" : "Zuid-Afrika",
+		"kamer" : "Loft studio kamer",
+		"personen" : 2
+	},
+	{
+		"accommodatie_code" : "HRMS2",
+		"naam" : "River Manor Boutique Hote",
+		"stad" : "Stellen Bosch",
+		"land" : "Zuid-Afrika",
+		"kamer" : "Superior tweepersoonskamer",
+		"personen" : 2
+	},
+	{
+		"accommodatie_code" : "HSCW1",
+		"naam" : "Safari Court Hotel",
+		"stad" : "Windhoek",
+		"land" : "Namibië",
+		"kamer" : "Classic tweepersoonskamer met 2 aparte bedden",
+		"personen" : 2
+	},
+	{
+		"accommodatie_code" : "HZBK1",
+		"naam" : "Zanbluu Beach Hotel",
+		"stad" : "Kiwengwa",
+		"land" : "Tanzania",
+		"kamer" : "Superior Suite met uitzicht op zee en eigen zwembad",
+		"personen" : 2
+	},
+	{
+		"accommodatie_code" : "LAAC1",
+		"naam" : "Sasa Safari Camp",
+		"stad" : "Outjo",
+		"land" : "Namibië",
+		"kamer" : "Tweepersoonskamer met Uitzicht",
+		"personen" : 2
+	},
+	{
+		"accommodatie_code" : "LASL1",
+		"naam" : "Africa Safari Lodge",
+		"stad" : "Mariental",
+		"land" : "Namibië",
+		"kamer" : "Familiekamer",
+		"personen" : 4
+	},
+	{
+		"accommodatie_code" : "LBBL1",
+		"naam" : "Baby Bush Lodge",
+		"stad" : "Kiwengwa",
+		"land" : "Tanzania",
+		"kamer" : "Bruidssuite met Balkon",
+		"personen" : 2
+	},
+	{
+		"accommodatie_code" : "LIEK1",
+		"naam" : "Impala Ecolodge",
+		"stad" : "Kisumu",
+		"land" : "Kenia",
+		"kamer" : "Luxe suite",
+		"personen" : 2
+	},
+	{
+		"accommodatie_code" : "LIML1",
+		"naam" : "Immanuel Wilderness Lodge",
+		"stad" : "Windhoek",
+		"land" : "Namibië",
+		"kamer" : "Tweepersoonskamer met Uitzicht op de Tuin",
+		"personen" : 2
+	},
+	{
+		"accommodatie_code" : "LML1",
+		"naam" : "Mika Lodge",
+		"stad" : "Lusaka",
+		"land" : "Zambia",
+		"kamer" : "Executive Suite",
+		"personen" : 2
+	},
+	{
+		"accommodatie_code" : "LNZL1",
+		"naam" : "Ngoma Zanga Lodge",
+		"stad" : "Livingstone",
+		"land" : "Zambia",
+		"kamer" : "Deluxe kamer met kingsize bed",
+		"personen" : 3
+	}
+]

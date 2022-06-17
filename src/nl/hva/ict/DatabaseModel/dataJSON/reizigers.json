@@ -1,0 +1,142 @@
+[
+	{
+		"reizigers_code" : "FadilO",
+		"voornaam" : "Omar",
+		"achternaam" : "Fadil",
+		"adres" : "Houtsberg 16",
+		"postcode" : "6091 NA",
+		"plaats" : "Leveroy",
+		"land" : "Nederland",
+		"gezinshoofd" : "FadilT"
+	},
+	{
+		"reizigers_code" : "FadilT",
+		"voornaam" : "Tahera",
+		"achternaam" : "Fadil",
+		"adres" : "Houtsberg 16",
+		"postcode" : "6091 NA",
+		"plaats" : "Leveroy",
+		"land" : "Nederland",
+		"gezinshoofd" : null
+	},
+	{
+		"reizigers_code" : "FonteijnC",
+		"voornaam" : "Claar",
+		"achternaam" : "Fonteijn",
+		"adres" : "Castricummerwerf 70",
+		"postcode" : "1901 RF",
+		"plaats" : "Castricum",
+		"land" : "Nederland",
+		"gezinshoofd" : "MeijerP"
+	},
+	{
+		"reizigers_code" : "JeremyB",
+		"voornaam" : "Bram",
+		"achternaam" : "Jeremy",
+		"adres" : "Rijksstraatweg 289",
+		"postcode" : "3956 CP",
+		"plaats" : "Leersum",
+		"land" : "Nederland",
+		"gezinshoofd" : "JeremyD"
+	},
+	{
+		"reizigers_code" : "JeremyD",
+		"voornaam" : "Demitri",
+		"achternaam" : "Jeremy",
+		"adres" : "Rijksstraatweg 289",
+		"postcode" : "3956 CP",
+		"plaats" : "Leersum",
+		"land" : "Nederland",
+		"gezinshoofd" : null
+	},
+	{
+		"reizigers_code" : "JeremyD1",
+		"voornaam" : "Devid",
+		"achternaam" : "Jeremy",
+		"adres" : "De Kronkels 25",
+		"postcode" : "3752 LM",
+		"plaats" : "Bunschoten",
+		"land" : "Nederland",
+		"gezinshoofd" : "JeremyD"
+	},
+	{
+		"reizigers_code" : "MeijerP",
+		"voornaam" : "Pieter ",
+		"achternaam" : "Meijer",
+		"adres" : "Expeditiestraat 2",
+		"postcode" : "1135 GB",
+		"plaats" : "Edam",
+		"land" : "Nederland",
+		"gezinshoofd" : null
+	},
+	{
+		"reizigers_code" : "MulderD",
+		"voornaam" : "Derek",
+		"achternaam" : "Mulder",
+		"adres" : "Lakenblekerstraat 49A",
+		"postcode" : "1431 GE",
+		"plaats" : "Aalsmeer",
+		"land" : "Nederland",
+		"gezinshoofd" : "MulderF"
+	},
+	{
+		"reizigers_code" : "MulderF",
+		"voornaam" : "Frank",
+		"achternaam" : "Mulder",
+		"adres" : "Lakenblekerstraat 49A",
+		"postcode" : "1431 GE",
+		"plaats" : "Aalsmeer ",
+		"land" : "Nederland",
+		"gezinshoofd" : null
+	},
+	{
+		"reizigers_code" : "MulderS",
+		"voornaam" : "Sophie",
+		"achternaam" : "Mulder",
+		"adres" : "Lakenblekerstraat 49A",
+		"postcode" : "1431 GE",
+		"plaats" : "Aalsmeer",
+		"land" : "Nederland",
+		"gezinshoofd" : "MulderF"
+	},
+	{
+		"reizigers_code" : "NazariM",
+		"voornaam" : "Moustafa",
+		"achternaam" : "Nazari",
+		"adres" : "Vlakdissen 12",
+		"postcode" : "1648 HJ",
+		"plaats" : "Den Goorn",
+		"land" : "Nederland",
+		"gezinshoofd" : null
+	},
+	{
+		"reizigers_code" : "NguyenR",
+		"voornaam" : "Roy",
+		"achternaam" : "Nguyen",
+		"adres" : "Bukkemweg 1",
+		"postcode" : "5081 CT",
+		"plaats" : "Hilvarenbeek",
+		"land" : "Nederland",
+		"gezinshoofd" : null
+	},
+	{
+		"reizigers_code" : "RijenF",
+		"voornaam" : "Fred",
+		"achternaam" : "van Rijen",
+		"adres" : "Einsteinstraat 10",
+		"postcode" : "1446 VG",
+		"plaats" : "Purmerend",
+		"land" : "Nederland",
+		"gezinshoofd" : "MulderF"
+	},
+	{
+		"reizigers_code" : "WongH",
+		"voornaam" : "Hu",
+		"achternaam" : "Wong",
+		"adres" : "Rembrandtstraat 7",
+		"postcode" : "3662 HN",
+		"plaats" : "Oud-Bijerland",
+		"land" : "Nederland",
+		"gezinshoofd" : null
+	}
+]
