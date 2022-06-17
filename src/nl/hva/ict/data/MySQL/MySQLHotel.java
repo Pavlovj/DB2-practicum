@@ -54,7 +54,6 @@ public class MySQLHotel extends MySQL<Hotel> {
                 String accommodatieCode = rs.getString("accommodatie_code");
                 double prijsPerNacht = rs.getDouble("prijs_per_nacht");
                 boolean ontbijt = Objects.equals(rs.getString("ontbijt"), String.valueOf('Y'));
-                System.out.println(ontbijt);
                 // inner join data
                 String naam = rs.getString("naam");
                 String stad = rs.getString("stad");

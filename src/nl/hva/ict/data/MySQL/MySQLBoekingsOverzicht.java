@@ -185,7 +185,6 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
 
             // Loop net zolang als er records zijn
             while (rs.next()) {
-                System.out.println(rs.getString("reizigers_code"));
                 reizigerCode = rs.getString("reizigers_code");
             }
         } catch (SQLException throwables) {
