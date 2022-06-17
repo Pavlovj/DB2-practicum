@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import static com.mongodb.client.model.Aggregates.match;
-import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.*;
 
 
 /**
@@ -87,8 +87,18 @@ public class MongoLandeninformatie extends MongoDB {
         // selecteer collection
         this.selectedCollection("landen");
 
+
+        Bson match;
+
+        if (alleenAfrika){
+            match = match(and(eq("region", "Africa"),eq("languages.name", taal)));
+        } else {
+            match = match(eq("languages.name", taal));
+        }
+
         // Aggregation functie in Mongo
-        Bson match = match(eq("languages.name", taal));
+
+//        Bson match = match(and(eq("region", ),eq("languages.name", taal));
 
         List<Document> results = collection.aggregate(Arrays.asList(match))
                 .into(new ArrayList<>());
