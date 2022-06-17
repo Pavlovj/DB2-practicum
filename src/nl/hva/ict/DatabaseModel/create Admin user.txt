@@ -1,0 +1,7 @@
+DROP USER 'administratie';
+CREATE USER 'administratie'@'%' IDENTIFIED BY 'Vakantie2020';
+
+GRANT EXECUTE ON PROCEDURE bigfivesafari.verwijderAccommodatie TO 'administratie';
+GRANT SELECT ON boekingsoverzicht TO 'administratie';
+
+SELECT User, Host FROM mysql.user;
