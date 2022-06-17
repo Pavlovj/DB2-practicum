@@ -75,10 +75,11 @@ public class MongoReizigers extends MongoDB {
 
         // Als je geen NoSQL server hebt opgegeven gaat de methode niet verder anders zou je een nullpointer krijgen
         if (MainApplication.getNosqlHost().equals(""))
+
             return;
 
         // Selecteer de juiste collecton in de NoSQL server
-        this.selectedCollection("reizigers");
+        this.selectedCollection("reiziger");
 
         // Haal alles op uit deze collection en loop er 1 voor 1 doorheen
         MongoCursor<Document> cursor = collection.find().iterator();
@@ -88,14 +89,14 @@ public class MongoReizigers extends MongoDB {
                 // warning Java is case sensitive
                 // Haal alle velden per record
                 Document tempReiziger = cursor.next();
-                String reizigerCode = (String) tempReiziger.get("Reizigers code");
-                String voornaam = (String) tempReiziger.get("Voornaam");
-                String achternaam = (String) tempReiziger.get("Achternaam");
-                String adres = (String) tempReiziger.get("Adres");
-                String postcode = (String) tempReiziger.get("Postcode");
-                String plaats = (String) tempReiziger.get("Plaats");
-                String land = (String) tempReiziger.get("Land");
-                String hoofdreiziger = (String) tempReiziger.get("Hoofdreiziger");
+                String reizigerCode = (String) tempReiziger.get("reizigers_code");
+                String voornaam = (String) tempReiziger.get("voornaam");
+                String achternaam = (String) tempReiziger.get("achternaam");
+                String adres = (String) tempReiziger.get("adres");
+                String postcode = (String) tempReiziger.get("postcode");
+                String plaats = (String) tempReiziger.get("plaats");
+                String land = (String) tempReiziger.get("land");
+                String hoofdreiziger = (String) tempReiziger.get("gezinshoofd");
 
                 // Maak een nieuw object en voeg deze toe aan de arraylist
                 reizigers.add(new Reiziger(reizigerCode, voornaam, achternaam, adres, postcode, plaats, land, hoofdreiziger));
