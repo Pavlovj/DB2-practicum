@@ -1,5 +1,6 @@
 package nl.hva.ict.data.MongoDB;
 
+import com.mongodb.client.model.Accumulators;
 import com.mongodb.client.model.Aggregates;
 import nl.hva.ict.MainApplication;
 import nl.hva.ict.models.Landen;
@@ -8,6 +9,8 @@ import org.bson.conversions.Bson;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static com.mongodb.client.model.Aggregates.count;
 import static com.mongodb.client.model.Aggregates.match;
 import static com.mongodb.client.model.Filters.*;
 
@@ -183,7 +186,18 @@ public class MongoLandeninformatie extends MongoDB {
         // reset arraylist
         this.landen.clear();
 
+        // selecteer collection
+        this.selectedCollection("landen");
+
+        Bson match = match(eq("subregion", "Eastern Africa"));
+        Bson aggregates = Aggregates.group("$subregion", Accumulators.sum("totalPop", "$population"));
+
+
+        List<Document> results = collection.aggregate(  Arrays.asList(match,aggregates))
+                .into(new ArrayList<>());
+
+
         // Om geen compile error te krijgen wordt tijdelijk 0 teruggegeven.
-        return 0;
+        return (int) results.get(0).get("totalPop");
     }
 }
